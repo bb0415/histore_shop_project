@@ -3,3 +3,11 @@
 
 runtime: php81
 
+env_variables:
+    GOOGLE_STORAGE_BUCKET: "picture-bbstorage"
+    # populate these to use the "mysql" or "postres" backends
+    CLOUDSQL_CONNECTION_NAME: "level-studio-421512:asia-northeast3:mydb"
+    DB_USER: "root"
+    DB_PASS: ""
+    ## Uncomment to give your database a name other than "bookshelf"
+    CLOUDSQL_DATABASE_NAME: "account"

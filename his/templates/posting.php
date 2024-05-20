@@ -1,0 +1,62 @@
+<? if($_SESSION['UID']) {?>
+
+<html>
+        <head>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Jua&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>posting</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        </head>
+        <body style="background-color: #AEEFFA;">
+            <h1 class="t" style="text-align: center; font-size: 64px; color: ivory;">상품 등록</h1> 
+        
+        
+        <form action = "postingprocess.php" method = "post" enctype="multipart/form-data">
+        
+        <br>
+        <div class="container">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">title</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="title" name ="title" maxlength = "32" required>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">comment</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name ="comment" required></textarea>
+        </div>
+        
+        <div class="input-group mb-3">
+            <input type="file" accept="image/*" name="file" class="form-control" id="inputGroupFile02" onchange="fileCheck(this);">
+        <script type="text/javascript"> 
+            function fileCheck(el) { 
+                if(!/\.(jpeg|jpg|png|gif|bmp)$/i.test(el.value)){ 
+        
+                    alert('이미지 파일만 업로드 가능합니다.'); 
+                    el.value = ''; 
+                    el.focus(); 
+                }
+            }
+        </script>
+            <label class="input-group-text" for="inputGroupFile02">img</label>
+        </div> 
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-outline-primary" style="text-align: center;">Upload</button>
+            </div>
+        </div>
+        </form>
+        
+        </body>
+        </html>
+                    <?
+                    }
+                    else{
+                    ?>
+                    <script>
+                        location.href='/'
+                    </script>
+                    <?
+                    }
+                    ?>
+
